@@ -91,7 +91,7 @@ function App() {
   // 🟢 This runs *once* when the page first loads
   // It calls our backend (Node.js) to get all products in the database
   useEffect(() => {
-    axios.get('http://localhost:5000/product_app/products') // fetch products
+    axios.get('https://product-app-cskw.vercel.app/product_app/products') // fetch products
       .then(res => setProducts(res.data))  // save them in state
       .catch(err => console.log('Error fetching products:', err));
   }, []);  // the empty [] means it runs only once at the start
@@ -99,7 +99,7 @@ function App() {
   // 🟣 This function runs when someone clicks "Add Product"
   const addProduct = () => {
     // Send the product data to our backend
-    axios.post('http://localhost:5000/product_app/products', { name, price })
+    axios.post('https://product-app-cskw.vercel.app/product_app/products', { name, price })
       .then(res => {
         // Add the new product to our current list (so page updates immediately)
         setProducts([...products, res.data]);
