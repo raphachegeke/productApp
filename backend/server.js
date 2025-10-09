@@ -22,6 +22,9 @@ const productRoutes = require('./routes/productRoute');
 // Use the product routes for the '/product_app/products' URL
 app.use('/product_app/products', productRoutes);
 
+const userRoutes = require("./routes/user_routes");
+app.use("/product_app/users", userRoutes)
+
 // Start the server and listen on the port defined in the environment variables
 app.listen(process.env.PORT, () => {
     console.log(`Server is running on port http://localhost:${process.env.PORT}`);  // Log the server's URL to the console
